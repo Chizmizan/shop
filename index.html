@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>.</title>
+    <title> </title>
 
     <meta property="og:title" content=" ">
     <meta property="og:description" content=" ">
@@ -13,20 +13,22 @@
     <meta property="og:image:height" content="630">
 
     <script type="text/javascript">
-        // Redirect after 1.5 seconds (Fast for users, enough for FB)
-        setTimeout(function(){
-            window.location.href = "https://s.shopee.ph/7pn7GpNlAg";
-        }, 1500);
+        // This detects if the visitor is a Facebook Bot or a real person
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('facebookexternalhit') > -1 || ua.indexOf('facebot') > -1) {
+            // It's Facebook! Do nothing so it can read the image.
+            console.log("Hello Facebook Bot");
+        } else {
+            // It's a real person! Send them to Shopee instantly.
+            window.location.replace("https://s.shopee.ph/7pn7GpNlAg");
+        }
     </script>
 
     <style>
-        body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #ffffff; }
-        img { max-width: 90%; height: auto; border-radius: 10px; }
+        body { background: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
     </style>
 </head>
 <body>
-    <a href="https://s.shopee.ph/7pn7GpNlAg">
-        <img src="https://i.imgur.com/vhkGQRw.jpeg" alt="Shop Now">
-    </a>
+    <p>Redirecting to Shopee... <a href="https://s.shopee.ph/7pn7GpNlAg">Click here</a></p>
 </body>
 </html>
