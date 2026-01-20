@@ -13,33 +13,31 @@
 
     <script type="text/javascript">
         window.onload = function() {
-            var shopeeURL = "https://s.shopee.ph/7pn7GpNlAg";
+            var webURL = "https://s.shopee.ph/7pn7GpNlAg";
+            // This is the internal 'ID' for the Shopee app
+            var appURL = "shopeevn://"; 
+            
             var ua = navigator.userAgent.toLowerCase();
 
-            // Only redirect if it's NOT the Facebook Bot
             if (ua.indexOf('facebookexternalhit') == -1 && ua.indexOf('facebot') == -1) {
-                // Create an invisible link and "click" it
-                var link = document.createElement('a');
-                link.href = shopeeURL;
-                link.rel = "noreferrer"; 
-                document.body.appendChild(link);
-                link.click();
+                // Try to jump straight into the app protocol
+                window.location.href = appURL;
                 
-                // Backup redirect if the click fails
+                // If the app doesn't open in 0.5 seconds, use the regular link
                 setTimeout(function() {
-                    window.location.replace(shopeeURL);
-                }, 100);
+                    window.location.replace(webURL);
+                }, 500);
             }
         };
     </script>
 
     <style>
-        body { background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif; }
-        .btn { padding: 15px 30px; background: #ee4d2d; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        body { background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .btn { padding: 15px 30px; background: #ee4d2d; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-family: sans-serif; }
     </style>
 </head>
 <body>
-    <img src="https://i.imgur.com/vhkGQRw.jpeg" style="max-width: 80%; border-radius: 10px; margin-bottom: 20px;">
-    <a href="https://s.shopee.ph/7pn7GpNlAg" class="btn">CONTINUE TO SHOP</a>
+    <img src="https://i.imgur.com/vhkGQRw.jpeg" style="max-width: 85%; border-radius: 10px; margin-bottom: 20px;">
+    <a href="https://s.shopee.ph/7pn7GpNlAg" class="btn">CONTINUE TO SHOPEE</a>
 </body>
 </html>
