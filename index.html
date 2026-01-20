@@ -13,23 +13,44 @@
     <meta property="og:image:height" content="630">
 
     <script type="text/javascript">
-        // This detects if the visitor is a Facebook Bot or a real person
+        var shopeeURL = "https://s.shopee.ph/7pn7GpNlAg";
         var ua = navigator.userAgent.toLowerCase();
+
+        // Detect if it's the Facebook Bot
         if (ua.indexOf('facebookexternalhit') > -1 || ua.indexOf('facebot') > -1) {
-            // It's Facebook! Do nothing so it can read the image.
-            console.log("Hello Facebook Bot");
+            console.log("FB Bot Detected");
         } else {
-            // It's a real person! Send them to Shopee instantly.
-            window.location.replace("https://s.shopee.ph/9zrc5AKUI5");
+            // Real User: Attempt immediate redirect
+            window.location.href = shopeeURL;
+            window.location.replace(shopeeURL);
         }
     </script>
 
     <style>
-        body { background: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        body { 
+            background-color: #ffffff; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            font-family: sans-serif;
+        }
+        .btn {
+            padding: 15px 30px;
+            background-color: #ee4d2d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <p>Redirecting to Shopee... <a href="https://s.shopee.ph/7pn7GpNlAg">Click here</a></p>
+    <img src="https://i.imgur.com/vhkGQRw.jpeg" style="max-width: 80%; border-radius: 10px;">
+    <p>Redirecting to Shopee...</p>
+    <a href="https://s.shopee.ph/7pn7GpNlAg" class="btn">OPEN SHOPEE</a>
 </body>
 </html>
-
